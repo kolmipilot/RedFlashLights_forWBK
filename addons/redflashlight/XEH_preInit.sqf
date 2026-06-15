@@ -10,9 +10,11 @@ ADDON = true;
 
 RED_WBK_HeadlampsAndFlashlights = [QGVAR(RedHeadLampItem), QGVAR(RedShoulderLampItem)];
 
-["WebKnight Headlamps", "wbk_red_headlampOnOff", ["Enable/Disable red headlamp", "Enable/Disable an headlamp"], { 
+
+["WebKnight Headlamps", "wbk_headlampOnOff", ["Enable/Disable an headlamp", "Enable/Disable an headlamp"], { 
 	_unit = missionNamespace getVariable["bis_fnc_moduleRemoteControl_unit", player];
-	if ((lifeState _unit == "INCAPACITATED") or !(alive _unit) or (RED_WBK_HeadlampsAndFlashlights findIf {_x in items _unit} == -1)) exitWith {};
+    if ((lifeState _unit == "INCAPACITATED") or !(alive _unit)) exitWith {};
+	if ((RED_WBK_HeadlampsAndFlashlights findIf {_x in items _unit}) == -1) exitWith {_unit spawn WBK_CustomFlashlight};
 	_unit spawn RED_WBK_CustomFlashlight;
 }, {}, [38, [false, true, false]]] call cba_fnc_addKeybind;  
 
@@ -46,8 +48,8 @@ RED_WBK_CustomFlashlight = {
 	_unit playActionNow "WBK_head_flashlight";
 	_light = QGVAR(HeadLampLightObject_Red) createVehicle [0,0,0];
 	_vol = createSimpleObject [QGVAR(HeadLampLightObject_Red), getPosASL _unit];
-	_light attachto [_unit,[0,0.041,0.22], "head", true];
-	_vol attachto [_unit,[0,-0.01,0.2], "head", true];
+	_light attachTo [_unit,[0,0.041,0.22], "head", true];
+	_vol attachTo [_unit,[0,-0.01,0.2], "head", true];
 	_unit setVariable ["WBK_AttachedFlaslights", [_vol, _light], true];
     [[_vol,_light], { 
 			_y = 0;      
@@ -73,8 +75,8 @@ RED_WBK_CustomFlashlight = {
 	_unit playActionNow "WBK_head_flashlight";
 	_light = QGVAR(HeadLampLightObject_Red) createVehicle [0,0,0];
 	_vol = createSimpleObject [QGVAR(HeadLampLightObject_Red), getPosASL _unit];
-	_light attachto [_unit,[0,0.041,0.22], "head", true];
-	_vol attachto [_unit,[0,-0.01,0.2], "head", true];
+	_light attachTo [_unit,[0,0.041,0.22], "head", true];
+	_vol attachTo [_unit,[0,-0.01,0.2], "head", true];
 	_unit setVariable ["WBK_AttachedFlaslights", [_vol, _light], true];
     [[_vol,_light], { 
 			_y = -8;   

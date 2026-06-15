@@ -9,7 +9,7 @@ include = [
     "mod.cpp",
     "README.md",
     "LICENSE.md",
-    "redflashlight_ico.paa"
+    "modicon_ico.paa"
 ]
 
 [version]
