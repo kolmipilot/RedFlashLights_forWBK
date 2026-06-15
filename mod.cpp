@@ -1,0 +1,12 @@
+name = "Red flashlights for WBK";
+picture = "modicon_ico.paa";
+actionName = "GitHub";
+action = "https://github.com/kolmipilot/RedFlashLights_forWBK";
+description = "Project Template";
+logo = "modicon_ico.paa";
+logoOver = "modicon_ico.paa";
+tooltip = "kolmipilot's Red Flashlights for WBK";
+tooltipOwned = "kolmipilot's Red Flashlights for WBK";
+overview = "kolmipilot's Red Flashlights for WBK";
+author = "kolmipilot";
+overviewPicture = "modicon_ico.paa";
