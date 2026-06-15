@@ -1,4 +1,4 @@
-# WBK Red Light Pack
+# Tactical Red Lights for WBK
 
 WBK Red Light Pack is a lightweight addon that expands the functionality of WebKnight's flashlight system by adding realistic low-visibility red lights for tactical operations.
 
